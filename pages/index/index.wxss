@@ -1,0 +1,17 @@
+.task-input, .task-detail {
+	padding: 20rpx;
+}
+
+.task-input button {
+	margin-top: 40rpx;
+}
+
+.task-list {
+	overflow: hidden;
+	margin-bottom: 20rpx;
+}
+
+.delete-btn {
+	display: inline-block;
+	float: right;
+}

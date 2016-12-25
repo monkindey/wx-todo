@@ -1,0 +1,21 @@
+<view class="task-input">
+	<input bindinput="bindInputTask" placeholder="请输入任务名称" value="{{ task }}" />
+	<button type="primary" bindtap="bindAddTask">确定</button>
+</view>
+
+<view class="task-detail">
+	<block wx:for="{{ taskList }}" wx:key="{{ item.value }}">
+		<view class="task-list">
+			<checkbox-group bindchange="bindTaskChange" data-index="{{ index }}">
+				<label>
+					<checkbox value="{{ item.value }}" checked="{{ item.checked }}"/>
+					{{ item.value }}
+				</label>
+				<button type="warn" size="mini" class="delete-btn" bindtap="bindDelete" data-index="{{ index }}">删除</button>
+			</checkbox-group>
+		</view>
+	</block>	
+	<view>
+		{{ complete }}个已完成/{{ taskList.length }}个任务
+	</view>
+</view>
