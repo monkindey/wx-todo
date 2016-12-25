@@ -41,11 +41,20 @@ Page({
 		var taskList = this.data.taskList;
 
 		if(task === '') {
+			wx.showToast({
+				title: '请输入任务名',
+				mask: true
+			})
 			return false;
 		}else if(taskList.some(function(t) {
 			return t.value === task
 		})) {
-			return false
+			wx.showToast({
+				title: '已存在该任务名',
+				mask: true
+			})
+
+			return false;
 		}
 
 		return true;
